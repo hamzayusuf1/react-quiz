@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FormControl,
   Stack,
@@ -8,7 +8,7 @@ import {
   Button,
 } from "@mui/material";
 
-const index = () => {
+const GameForm = ({ handleQuiz }) => {
   return (
     <form>
       <Stack spacing={3}>
@@ -21,11 +21,11 @@ const index = () => {
           </Select>
         </FormControl>
         <FormControl>
-          <Button>Start Quiz</Button>
+          <Button onClick={handleQuiz}>Start Quiz</Button>
         </FormControl>
       </Stack>
     </form>
   );
 };
 
-export default index;
+export default GameForm;
