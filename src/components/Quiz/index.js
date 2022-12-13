@@ -9,49 +9,66 @@ import {
   FormLabel,
 } from "@mui/material";
 
-import { questions } from "../../data/questions";
+import { useGame } from "../../contexts/GameProvider";
 
 const Quiz = () => {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [optionSelected, setOptionSelected] = useState();
+  const {
+    state: { questions },
+    dispatch,
+  } = useGame();
 
-  const currentQuestion = questions.sports[currentQuestionIndex];
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selection, setSelection] = useState();
+  const [showQuestion, setShowQuestion] = useState(true);
+
+  const currentQuestion = questions[currentQuestionIndex];
   console.log(currentQuestion);
-  console.log(optionSelected);
+  console.log(selection);
 
   const handleClick = () => {
-    if (currentQuestionIndex < 1) {
+    if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setOptionSelected(false);
+      setSelection(false);
+    } else {
+      setShowQuestion(false);
     }
   };
 
   const onChange = (e) => {
-    setOptionSelected(e.target.value);
+    setSelection(e.target.value);
   };
 
   return (
     <div>
-      <Box className="border-black mt-2 flex flex-col">
-        <FormControl>
-          <FormLabel>{currentQuestion.question}</FormLabel>
-          <RadioGroup onChange={onChange}>
-            {currentQuestion.options.map((option, index) => (
-              <FormControlLabel
-                control={<Radio />}
-                label={index}
-                value={option}
-                key={index}
-              ></FormControlLabel>
-            ))}
-          </RadioGroup>
-        </FormControl>
-        {optionSelected && (
-          <FormControl className="w-full">
-            <Button variant="contained">Next</Button>
+      {showQuestion && (
+        <Box className="border-black mt-2 flex flex-col">
+          <FormControl>
+            <FormLabel>{currentQuestion.question}</FormLabel>
+            <RadioGroup onChange={onChange}>
+              {currentQuestion.options.map((option, index) => (
+                <FormControlLabel
+                  control={<Radio />}
+                  label={index}
+                  value={option}
+                  key={index}
+                ></FormControlLabel>
+              ))}
+            </RadioGroup>
           </FormControl>
-        )}
-      </Box>
+          {selection && (
+            <FormControl className="w-full">
+              <Button variant="contained" onClick={handleClick}>
+                Next
+              </Button>
+            </FormControl>
+          )}
+        </Box>
+      )}
+      {!showQuestion && (
+        <div>
+          <h1 className="text-center font-bold text-3xl">Results container</h1>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,68 +1,46 @@
 export const questions = {
-  sports: [
+  football: [
     {
-      question: "Sport question 1",
-      options: ["Sport 1", "Sport 2", "Sport 3", "Sport 4"],
-      correctOption: "Sport 1",
+      question: "Football Question 1",
+      options: ["Football 1", "Football 2", "Football 3", "Football 4"],
+      correctOption: "Football 1",
     },
     {
-      question: "Sport question 2",
-      options: ["Sport 1", "Sport 2", "Sport 3", "Sport 4"],
-      correctOption: "Sport 2",
+      question: "Football Question 2",
+      options: ["Football 1", "Football 2", "Football 3", "Football 4"],
+      correctOption: "Football 2",
     },
     {
-      question: "Sport question 3",
-      options: ["Sport 1", "Sport 2", "Sport 3", "Sport 4"],
-      correctOption: "Sport 3",
+      question: "Football Question 3",
+      options: ["Football 1", "Football 2", "Football 3", "Football 4"],
+      correctOption: "Football 3",
     },
     {
-      question: "Sport question 4",
-      options: ["Sport 1", "Sport 2", "Sport 3", "Sport 4"],
-      correctOption: "Sport 4",
-    },
-  ],
-  music: [
-    {
-      question: "Music question 1",
-      options: ["Music 1", "Music 2", "Music 3", "Music 4"],
-      correctOption: "Music 1",
-    },
-    {
-      question: "Music question 2",
-      options: ["Music 1", "Music 2", "Music 3", "Music 4"],
-      correctOption: "Music 2",
-    },
-    {
-      question: "Music question 3",
-      options: ["Music 1", "Music 2", "Music 3", "Music 4"],
-      correctOption: "Music 3",
-    },
-    {
-      question: "Music question 4",
-      options: ["Music 1", "Music 2", "Music 3", "Music 4"],
-      correctOption: "Music 4",
+      question: "Football Question 4",
+      options: ["Football 1", "Football 2", "Football 3", "Football 4"],
+      correctOption: "Football 4",
     },
   ],
-  movies: [
+  basketball: [
     {
-      question: "Movie question 1",
-      options: ["Movie 11", "Movie 22", "Movie 33", "Movie 44"],
-      correctOption: "Movie 11",
+      question: "Basketball question 1",
+      options: ["Basketball 1", "Basketball 2", "Basketball 3", "Basketball 4"],
+      correctOption: "Basketball 1",
     },
     {
-      question: "Movie question 2",
-      options: ["Movie 111", "Movie 222", "Movie 333", "Movie 444"],
-      correctOption: "Movie 222",
+      question: "Basketball question 2",
+      options: ["Basketball 1", "Basketball 2", "Basketball 3", "Basketball 4"],
+      correctOption: "Basketball 2",
     },
     {
-      question: "Movie question 3",
-      options: ["Movie 1a", "Movie 2a", "Movie 3a", "Movie 4a"],
-      correctOption: "Movie 3a",
+      question: "Basketball question 3",
+      options: ["Basketball 1", "Basketball 2", "Basketball 3", "Basketball 4"],
+      correctOption: "Basketball 3",
     },
     {
-      question: "Movie question 4",
-      options: ["Movie 1", "Movie 2", "Movie 3", "Movie 4"],
-      correctOption: "Movie 4",
+      question: "Basketball question 4",
+      options: ["Basketball 1", "Basketball 2", "Basketball 3", "Basketball 4"],
+      correctOption: "Basketball 4",
     },
   ],
 };

@@ -1,24 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "@mui/material";
 import { Box } from "@mui/material";
+import { useGame } from "../../contexts/GameProvider";
 
 import GameForm from "../GameForm";
 import Quiz from "../Quiz";
 
 const Game = () => {
-  const [gameStarted, setGameStarted] = useState(true);
+  const { state } = useGame();
+  console.log(state);
+
   return (
     <Container maxWidth="md">
-      {gameStarted && (
+      {!state.gameStarted && (
         <Box className=" mt-5" component="section">
-          <GameForm
-            handleQuiz={() => {
-              setGameStarted(!gameStarted);
-            }}
-          />
+          <GameForm />
         </Box>
       )}
-      {!gameStarted && (
+      {state.gameStarted && (
         <Box>
           <Quiz />
         </Box>

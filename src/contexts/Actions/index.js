@@ -1,0 +1,3 @@
+export const START_GAME = "START_GAME";
+export const CHANGE_CATEGORY = "CHANGE_CATEGORY";
+export const NEXT_QUESTION = "NEXT_QUESTION";
