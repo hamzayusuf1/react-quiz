@@ -10,10 +10,12 @@ import {
 } from "@mui/material";
 
 import { useGame } from "../../contexts/GameProvider";
+import { ProgressBar } from "../ProgressBar";
+import { NEXT_QUESTION } from "../../contexts/Actions";
 
 const Quiz = () => {
   const {
-    state: { questions },
+    state: { questions, percentageComplete },
     dispatch,
   } = useGame();
 
@@ -32,6 +34,9 @@ const Quiz = () => {
     } else {
       setShowQuestion(false);
     }
+    dispatch({
+      type: NEXT_QUESTION,
+    });
   };
 
   const onChange = (e) => {
@@ -39,7 +44,8 @@ const Quiz = () => {
   };
 
   return (
-    <div>
+    <div className="mt-5">
+      <ProgressBar progress={percentageComplete} isComplete={!showQuestion} />
       {showQuestion && (
         <Box className="border-black mt-2 flex flex-col">
           <FormControl>
