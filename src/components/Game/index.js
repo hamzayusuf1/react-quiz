@@ -8,7 +8,6 @@ import Quiz from "../Quiz";
 
 const Game = () => {
   const { state } = useGame();
-  console.log(state);
 
   return (
     <Container maxWidth="md">

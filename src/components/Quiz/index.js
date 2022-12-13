@@ -12,6 +12,7 @@ import {
 import { useGame } from "../../contexts/GameProvider";
 import { ProgressBar } from "../ProgressBar";
 import { NEXT_QUESTION } from "../../contexts/Actions";
+import { Results } from "../Results";
 
 const Quiz = () => {
   const {
@@ -24,8 +25,6 @@ const Quiz = () => {
   const [showQuestion, setShowQuestion] = useState(true);
 
   const currentQuestion = questions[currentQuestionIndex];
-  console.log(currentQuestion);
-  console.log(selection);
 
   const handleClick = () => {
     if (currentQuestionIndex < questions.length - 1) {
@@ -43,6 +42,8 @@ const Quiz = () => {
     setSelection(e.target.value);
   };
 
+  const label = "Hamza";
+
   return (
     <div className="mt-5">
       <ProgressBar progress={percentageComplete} isComplete={!showQuestion} />
@@ -51,13 +52,12 @@ const Quiz = () => {
           <FormControl>
             <FormLabel>{currentQuestion.question}</FormLabel>
             <RadioGroup onChange={onChange}>
-              {currentQuestion.options.map((option, index) => (
+              {currentQuestion.options.map((option) => (
                 <FormControlLabel
                   control={<Radio />}
-                  label={index}
+                  label={option}
                   value={option}
-                  key={index}
-                ></FormControlLabel>
+                />
               ))}
             </RadioGroup>
           </FormControl>
@@ -72,7 +72,7 @@ const Quiz = () => {
       )}
       {!showQuestion && (
         <div>
-          <h1 className="text-center font-bold text-3xl">Results container</h1>
+          <Results />
         </div>
       )}
     </div>
@@ -80,3 +80,16 @@ const Quiz = () => {
 };
 
 export default Quiz;
+
+{
+  /* <RadioGroup onChange={onChange}>
+{currentQuestion.options.map((option, index) => (
+  <FormControlLabel
+    control={<Radio />}
+    label={index}
+    value={option}
+    key={index}
+  />
+))}
+</RadioGroup> */
+}

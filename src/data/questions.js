@@ -1,23 +1,24 @@
 export const questions = {
   football: [
     {
-      question: "Football Question 1",
-      options: ["Football 1", "Football 2", "Football 3", "Football 4"],
-      correctOption: "Football 1",
+      question: "Which English Club has won the most Premier League trophies",
+      options: ["Manchester United", "Manchester City", "Liverpool", "Chelsea"],
+      correctOption: "Manchester United",
     },
     {
-      question: "Football Question 2",
-      options: ["Football 1", "Football 2", "Football 3", "Football 4"],
-      correctOption: "Football 2",
+      question: "Who is the all-time leading goal scorer in the Premier League",
+      options: ["Harry Kane", "Thierry Henry", "Alan Shearer", "Wayne Rooney"],
+      correctOption: "Alan Shearer",
     },
     {
-      question: "Football Question 3",
-      options: ["Football 1", "Football 2", "Football 3", "Football 4"],
-      correctOption: "Football 3",
+      question: "Which Premier League side is nicknamed The Villans",
+      options: ["Manchester United", "Everton", "Liverpool", "Aston Villa"],
+      correctOption: "Aston Villa",
     },
     {
-      question: "Football Question 4",
-      options: ["Football 1", "Football 2", "Football 3", "Football 4"],
+      question:
+        "Which English team has won the premier league whilst conceding the least number of goals",
+      options: ["Liverpool", "Arsenal", "Chelsea", "Manchester United"],
       correctOption: "Football 4",
     },
   ],

@@ -3,7 +3,7 @@ import React from "react";
 
 export const ProgressBar = ({ progress, isComplete }) => {
   return (
-    <div className="flex justify-center h-6">
+    <div className="flex justify-center">
       <Box className="w-full">
         <LinearProgress
           variant="determinate"
